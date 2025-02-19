@@ -7,7 +7,11 @@ import tseslint from 'typescript-eslint'
 export default tseslint.config(
   { ignores: ['dist'] },
   {
-    extends: [js.configs.recommended, ...tseslint.configs.recommended],
+    extends: [
+      js.configs.recommended,
+      ...tseslint.configs.recommended,
+
+    ],
     files: ['**/*.{ts,tsx}'],
     languageOptions: {
       ecmaVersion: 2020,
@@ -23,6 +27,18 @@ export default tseslint.config(
         'warn',
         { allowConstantExport: true },
       ],
+      //синтаксис
+      quotes: ["error", "double", { "avoidEscape": true }],//кавычки
+      "max-len": [
+        "error",
+        {
+          code: 100,
+          ignoreComments: true,
+          ignoreTemplateLiterals: true,
+          ignoreStrings: true,
+        },
+      ],//длина строк
+      indent: ["error", "tab"],//отступы
     },
   },
 )
