@@ -1,0 +1,18 @@
+.sidebar{
+	flex: 0 0 80px;
+	background: #000;
+	transition: all 0.3s ease;
+}
+.sidebar.active{
+flex: 0 0 200px;
+}
+.sidebar_content{
+margin-bottom: 50px;
+}
+.sidebar_item{
+margin: 10px;
+}
+.sidebar_item .active{
+color: #ca0000 ;
+}
+

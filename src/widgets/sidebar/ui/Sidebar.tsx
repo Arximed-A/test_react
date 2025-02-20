@@ -1,21 +1,31 @@
 import {SidebarItemsList} from "../model/modelSidebar.ts";
-import {Link} from "react-router";
-
+import { NavLink} from "react-router";
+import styles from "./sidebar.module.scss";
+import { useState } from "react";
+import clsx from "clsx";
 
 const Sidebar = () => {
+	const [isActive, setIsActive] = useState(true);
+	const sidebarClass = clsx(styles.sidebar, isActive && styles.active);
 
 	const listItems = SidebarItemsList.map(item =>
-		<p key={item.path}>
-			<Link to={item.path}>
+		<li key={item.path} className={styles.sidebar_item}>
+			<NavLink to={item.path} className={({ isActive }) =>
+				isActive ? styles.active : undefined
+			}
+			>
 				{item.text}
-			</Link>
-		</p>
+			</NavLink>
+		</li>
 	);
 
 	return (
 		<>
-			<aside>
-				{listItems}
+			<aside className={sidebarClass}>
+				<ul className={styles.sidebar_content}>
+					{listItems}
+				</ul>
+				<button onClick={() => setIsActive(!isActive)}>свернуть</button>
 			</aside>
 		</>
 	);

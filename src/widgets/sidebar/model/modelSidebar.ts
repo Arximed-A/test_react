@@ -14,5 +14,12 @@ export const SidebarItemsList: SidebarItemType[] = [
 		path: RoutePath.about,
 		text: "О сайте",
 	},
-
+	{
+		path: RoutePath.staff,
+		text: "Сотрудники",
+	},
+	{
+		path: RoutePath.login,
+		text: "Войти",
+	},
 ];
