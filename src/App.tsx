@@ -1,22 +1,19 @@
-
 import {Route, RouteProps, Routes} from "react-router";
 import Sidebar from "./widgets/sidebar/ui/Sidebar.tsx";
 import {routeConfig} from "./shared/routerList/routeConfig.ts";
 import "./reset.css";
 import styles from "./app.module.scss";
-import clsx from "clsx";
 
 function App() {
 
 	const renderWithWrapper = (route: RouteProps) => {
-		return	<Route
+		return <Route
 			key={route.path}
 			path={route.path}
 			Component={route.Component}
 		/>
-		
-	};
 
+	};
 
 
 	return (

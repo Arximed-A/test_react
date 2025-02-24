@@ -1,7 +1,7 @@
 import {SidebarItemsList} from "../model/modelSidebar.ts";
-import { NavLink} from "react-router";
-import styles from "./sidebar.module.scss";
-import { useState } from "react";
+import {NavLink} from "react-router";
+import styles from "./Sidebar.module.scss";
+import {useState} from "react";
 import clsx from "clsx";
 
 const Sidebar = () => {
@@ -10,7 +10,7 @@ const Sidebar = () => {
 
 	const listItems = SidebarItemsList.map(item =>
 		<li key={item.path} className={styles.sidebar_item}>
-			<NavLink to={item.path} className={({ isActive }) =>
+			<NavLink to={item.path} className={({isActive}) =>
 				isActive ? styles.active : undefined
 			}
 			>
