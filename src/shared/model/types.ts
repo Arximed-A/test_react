@@ -91,3 +91,10 @@ export interface IDetailPermissions {
   can_edit_request_stext: boolean;
   can_edit_request_type: boolean;
 }
+
+export interface IPagination<T> {
+  count: number;
+  next: null | string;
+  previous: null | string;
+  results: T;
+}

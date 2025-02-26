@@ -1,44 +1,55 @@
-import js from '@eslint/js'
-import globals from 'globals'
-import reactHooks from 'eslint-plugin-react-hooks'
-import reactRefresh from 'eslint-plugin-react-refresh'
-import tseslint from 'typescript-eslint'
+import js from "@eslint/js"
+import tseslint from "typescript-eslint"
+import react from "eslint-plugin-react";
+import globals from "globals";
+import reactPlugin from "eslint-plugin-react";
 
 export default tseslint.config(
-  { ignores: ['dist'] },
-  {
-    extends: [
-      js.configs.recommended,
-      ...tseslint.configs.recommended,
-
-    ],
-    files: ['**/*.{ts,tsx}'],
-    languageOptions: {
-      ecmaVersion: 2020,
-      globals: globals.browser,
-    },
-    plugins: {
-      'react-hooks': reactHooks,
-      'react-refresh': reactRefresh,
-    },
-    rules: {
-      ...reactHooks.configs.recommended.rules,
-      'react-refresh/only-export-components': [
-        'warn',
-        { allowConstantExport: true },
-      ],
-      //синтаксис
-      quotes: ["error", "double", { "avoidEscape": true }],//кавычки
-      "max-len": [
-        "error",
-        {
-          code: 100,
-          ignoreComments: true,
-          ignoreTemplateLiterals: true,
-          ignoreStrings: true,
-        },
-      ],//длина строк
-      indent: ["error", "tab"],//отступы
-    },
-  },
+	{ignores: ["dist"]},
+	{
+		extends: [
+			js.configs.recommended,
+			...tseslint.configs.recommended,
+			reactPlugin.configs.flat.recommended,
+			reactPlugin.configs.flat["jsx-runtime"],
+		],
+		settings: {
+			react: {
+				"version": "detect",
+			}
+		},
+		files: ["**/*.{js,jsx,mjs,cjs,ts,tsx}"],
+		languageOptions: {
+			...reactPlugin.configs.flat.recommended.languageOptions,
+			parserOptions: {
+				ecmaFeatures: {
+					jsx: true,
+				},
+			},
+			globals: {
+				...globals.serviceworker,
+				...globals.browser,
+			},
+		},
+		plugins: {
+			react,
+		},
+		rules: {
+			"react/jsx-uses-react": "error",
+			"react/jsx-uses-vars": "error",
+			"react/hook-use-state": ["error", { "allowDestructuredState": false }],
+			//синтаксис
+			quotes: ["error", "double", {"avoidEscape": true}],//кавычки
+			"max-len": [
+				"error",
+				{
+					code: 100,
+					ignoreComments: true,
+					ignoreTemplateLiterals: true,
+					ignoreStrings: true,
+				},
+			],//длина строк
+			indent: ["error", "tab"],//отступы
+		},
+	},
 )

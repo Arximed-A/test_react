@@ -5,14 +5,20 @@ import BaseLabel from "@/shared/ui/baseLabel/BaseLabel.tsx";
 import style from "./LoginPage.module.scss"
 import BaseInput from "@/shared/ui/baseInput/ui/BaseInput.tsx";
 import {IProfile} from "@/shared/model/types.ts";
+import {setUser} from "@/shared/store/user/userSlice.ts";
+import {useAppDispatch} from "@/app/hooks.ts";
+import {NavigateFunction, useNavigate} from "react-router";
+import {RoutePath} from "@/shared/routerList/routeConfig.ts";
 
 
 const LoginPage = () => {
+	const dispatch = useAppDispatch()
 	const [formData, setFormData] = useState<ILoginPage>({
 		username: "chertok_be",
 		password: "11111111"
 	});
 	const [isLoading, setIsLoading] = useState<boolean>(false);
+	const navigate: NavigateFunction = useNavigate();
 
 	const handleInputChange = (key: string, value: string) => {
 		setFormData((prevForm) => ({
@@ -26,8 +32,11 @@ const LoginPage = () => {
 			setIsLoading(true)
 			const res: boolean | void = await fetchLogin(formData,);
 			if (res) {
-				const test: IProfile = await fetchCurrentUser()
-				console.log(test)
+				const user: IProfile = await fetchCurrentUser()
+				if (user) {
+					dispatch(setUser(user))
+					navigate(RoutePath.main)
+				}
 			}
 		} catch (e) {
 			console.log(e)

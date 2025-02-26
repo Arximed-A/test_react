@@ -7,7 +7,7 @@ interface IBaseInput {
   onChange?: (value: string) => void;
 }
 
-const BaseInput = memo((props: IBaseInput) => {
+const BaseInput = memo(function BaseInput(props: IBaseInput) {
 	const {type = "text", value, disabled, onChange} = props;
 
 	return (

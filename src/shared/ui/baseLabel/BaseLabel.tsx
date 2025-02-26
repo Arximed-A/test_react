@@ -2,7 +2,7 @@ import {ModelBaseLabel} from "@/shared/ui/baseLabel/modelBaseLabel.ts";
 import style from "./BaseLabel.module.scss";
 import {memo} from "react";
 
-const BaseLabel = memo(({text, children}: ModelBaseLabel) => {
+const BaseLabel = memo(function BaseLabel({text, children}: ModelBaseLabel) {
 	return (
 		<>
 			<div className={style.container}>
