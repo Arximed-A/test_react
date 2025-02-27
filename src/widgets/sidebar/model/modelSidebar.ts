@@ -1,4 +1,4 @@
-import {RoutePath} from "@/shared/routerList/routeConfig.ts";
+import {RoutePath} from "@/shared/routerList/routeConfig.tsx";
 
 export interface SidebarItemType {
   path: string;

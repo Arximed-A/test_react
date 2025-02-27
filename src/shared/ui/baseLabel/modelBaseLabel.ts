@@ -1,6 +1,6 @@
 import * as React from "react";
 
-export interface ModelBaseLabel {
+export interface IModelBaseLabel {
   text: string,
   children: React.ReactNode
 }

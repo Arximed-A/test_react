@@ -8,11 +8,14 @@ import {IProfile} from "@/shared/model/types.ts";
 import {setUser} from "@/shared/store/user/userSlice.ts";
 import {useAppDispatch} from "@/app/hooks.ts";
 import {NavigateFunction, useNavigate} from "react-router";
-import {RoutePath} from "@/shared/routerList/routeConfig.ts";
+import {RoutePath} from "@/shared/routerList/routeConfig.tsx";
+import { useSelector } from "react-redux";
+import ButtonLoading from "@/features/ButtonLoading/ui/ButtonLoading";
 
 
 const LoginPage = () => {
 	const dispatch = useAppDispatch()
+	// const count = useSelector((state: RootState) => state.counter.value)
 	const [formData, setFormData] = useState<ILoginPage>({
 		username: "chertok_be",
 		password: "11111111"
@@ -28,8 +31,18 @@ const LoginPage = () => {
 	}
 
 	const sendForm = async () => {
+		
 		try {
 			setIsLoading(true)
+			// Удалить
+			await new Promise((resolve) => {
+				setTimeout(() => {
+					dispatch(setUser({})); // Выполняем действие
+					resolve(); // Завершаем Promise
+				}, 1000);
+			});
+			navigate(RoutePath.about)
+			return
 			const res: boolean | void = await fetchLogin(formData,);
 			if (res) {
 				const user: IProfile = await fetchCurrentUser()
@@ -63,9 +76,8 @@ const LoginPage = () => {
 							onChange={(value: string) => handleInputChange("password", value)}
 						/>
 					</BaseLabel>
-					<button disabled={isLoading} onClick={sendForm}>
-						{isLoading ? "Загрузка..." : "Войти В it"}
-					</button>
+					<ButtonLoading disabled={isLoading} loading={isLoading} onClick={sendForm} text={isLoading ? "Загрузка..." : "Войти В it"}/>
+					
 				</div>
 			</div>
 		</>

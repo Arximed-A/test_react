@@ -5,18 +5,16 @@ import {useState} from "react";
 import clsx from "clsx";
 import {selectUser} from "@/shared/store/user/userSlice.ts";
 import {useAppSelector} from "@/app/hooks.ts";
-import {RoutePath} from "@/shared/routerList/routeConfig.ts";
+import {RoutePath} from "@/shared/routerList/routeConfig.tsx";
 import {IProfile} from "@/shared/model/types.ts";
 
 const Sidebar = () => {
 	const [isActive, setIsActive] = useState(true);
 	const sidebarClass = clsx(styles.sidebar, isActive && styles.active);
 	const isAuth: IProfile | null = useAppSelector(selectUser);
-	// const isAuth2: IStaffItem = useAppSelector(selectItems);
-	// console.log(isAuth)
-
+	
 	const listItems = SidebarItemsList.map(item => {
-		if (item.authOnly && isAuth) {
+		if (item.authOnly && !isAuth) {
 			return null;
 		}
 		return (

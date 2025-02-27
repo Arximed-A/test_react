@@ -1,18 +1,30 @@
-import {Route, RouteProps, Routes} from "react-router";
+import {Navigate, Route,  Routes} from "react-router";
 import Sidebar from "./widgets/sidebar/ui/Sidebar.tsx";
-import {routeConfig} from "./shared/routerList/routeConfig.ts";
+import {AppRoutesProps, routeConfig, RoutePath} from "./shared/routerList/routeConfig.tsx";
 import "./reset.css";
 import styles from "./app.module.scss";
 
+import { useAppSelector } from "./app/hooks.ts";
+import { selectUser } from "./shared/store/user/userSlice.ts";
+
 function App() {
-
-	const renderWithWrapper = (route: RouteProps) => {
-		return <Route
-			key={route.path}
-			path={route.path}
-			Component={route.Component}
-		/>
-
+	const isAuth: boolean = !!useAppSelector(selectUser);
+	
+	const renderWithWrapper = (route: AppRoutesProps) => {
+		if(route.authOnly){
+			return <Route
+				key={route.path}
+				path={route.path}
+				element={ isAuth ? 
+					route.element : 
+					<Navigate replace to={RoutePath.login}/>}
+			/>
+		} else{
+			return <Route
+				key={route.path}
+				path={route.path}
+				element={route.element}/>	
+		}
 	};
 
 

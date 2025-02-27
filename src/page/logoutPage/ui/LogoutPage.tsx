@@ -1,5 +1,5 @@
 import {NavigateFunction, useNavigate} from "react-router";
-import {RoutePath} from "@/shared/routerList/routeConfig.ts";
+import {RoutePath} from "@/shared/routerList/routeConfig.tsx";
 import {useAppDispatch} from "@/app/hooks.ts";
 import {clearUser} from "@/shared/store/user/userSlice.ts";
 

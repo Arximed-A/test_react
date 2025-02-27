@@ -2,6 +2,7 @@ import {memo, ReactNode, useEffect, useState} from "react";
 import {fetchStaffPage} from "../api/apiStaffPage";
 import {IStaffItem} from "@/page/staffPage/model/modelStaffPage.ts";
 
+
 const StaffPage = memo(function StaffPage() {
 	const [items, setItems] = useState<IStaffItem[]>([]);
 	const [isLoading, setIsLoading] = useState<boolean>(false);

@@ -1,8 +1,8 @@
-import {ModelBaseLabel} from "@/shared/ui/baseLabel/modelBaseLabel.ts";
+import {IModelBaseLabel} from "@/shared/ui/baseLabel/modelBaseLabel.ts";
 import style from "./BaseLabel.module.scss";
 import {memo} from "react";
 
-const BaseLabel = memo(function BaseLabel({text, children}: ModelBaseLabel) {
+const BaseLabel = memo(function BaseLabel({text, children}: IModelBaseLabel) {
 	return (
 		<>
 			<div className={style.container}>
