@@ -18,7 +18,7 @@ export default tseslint.config(
 				"version": "detect",
 			}
 		},
-		files: ["**/*.{js,jsx,mjs,cjs,ts,tsx}"],
+		files: ["**/*.{js,jsx,mjs,cjs,ts,tsx,json}"],
 		languageOptions: {
 			...reactPlugin.configs.flat.recommended.languageOptions,
 			parserOptions: {

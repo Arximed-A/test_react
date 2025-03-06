@@ -7,7 +7,12 @@ const ButtonLoading = (props: IButtonLoading) => {
 	
 	return (
 		<>
-			<a href="#" onClick={props.onClick} className={buttonStyle} data-back="Загрузка" data-front={props.text}></a>
+			<button 
+				onClick={props.onClick} 
+				className={buttonStyle} 
+				data-back="Загрузка" 
+				data-front={props.text}>
+			</button>
 		</>
 	);
 }

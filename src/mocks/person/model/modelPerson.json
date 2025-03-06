@@ -1,0 +1,128 @@
+{
+    "id": "9b620fd2-2eda-43c9-af50-f242f727ad6c",
+    "object_type": 1,
+    "stext": "Черток Борис Евсеевич",
+    "short": "Черток Б.Е.",
+    "legal_entity": {
+        "identifier": "MOLGA",
+        "stext": "Молга консалтинг"
+    },
+    "photo": "http://localhost:8000/content/placeholder.jpg",
+    "position": {
+        "id": "a0d6bcfc-6733-4bef-85f1-026501e63578",
+        "object_type": 2,
+        "stext": "Инженер теплотехник"
+    },
+    "orgunit": {
+        "id": "10a7deb0-9a4b-4f55-917e-375cf57a4c1c",
+        "object_type": 3,
+        "stext": "Отдел разработки"
+    },
+    "user": {
+        "username": "chertok_be",
+        "email": "a.arhipov@molga.ru",
+        "is_active": true,
+        "is_staff": false,
+        "language_code": {
+            "value": "ru",
+            "label": "Русский"
+        }
+    },
+    "phone": "+79061239916",
+    "email": "a.arhipov@molga.ru",
+    "require_usig": false,
+    "certificates": [
+        {
+            "id": "812b7cbc-d113-4a5d-9de6-775df1899bcd",
+            "person_id": "9b620fd2-2eda-43c9-af50-f242f727ad6c",
+            "serial_number": {
+                "decimal": "1269853269988152531230980941297236846917",
+                "hexadecimal": "3BB54D800F8B13EAF4D4B01AD01082945"
+            },
+            "certificate_type": {
+                "value": "USIG",
+                "label": "УНЭП"
+            },
+            "issue_provider": {
+                "value": "ASTRAL",
+                "label": "Калуга Астрал"
+            },
+            "file_exists": true,
+            "issue_date": {
+                "value": "2024-09-27T12:57:38Z",
+                "label": "27.09.2024 12:57:38"
+            },
+            "valid_until": {
+                "value": "2025-09-27T12:57:34Z",
+                "label": "27.09.2025 12:57:34"
+            },
+            "is_activated": true,
+            "active": true
+        }
+    ],
+    "issue_status": {
+        "value": "ISSUED",
+        "label": "Выпущен"
+    },
+    "issue_request": null,
+    "accounts": [
+        {
+            "id": "9b620fd2-2eda-43c9-af50-f242f727ad6c",
+            "object_type": 1,
+            "stext": "Черток Борис Евсеевич",
+            "short": "Черток Б.Е.",
+            "legal_entity": {
+                "identifier": "MOLGA",
+                "stext": "Молга консалтинг"
+            },
+            "photo": "http://localhost:8000/content/placeholder.jpg",
+            "is_active": true
+        },
+        {
+            "id": "7f25ad78-ef61-48a1-a993-096971cc5265",
+            "object_type": 1,
+            "stext": "Черток Борис Евсеевич",
+            "short": "Черток Б.Е.",
+            "legal_entity": {
+                "identifier": "BLUETECH",
+                "stext": "Блютек"
+            },
+            "photo": "http://localhost:8000/content/placeholder.jpg",
+            "is_active": false
+        }
+    ],
+    "roles": {
+        "id": null,
+        "stext": "Новая роль",
+        "is_hr_admin": true,
+        "is_kedo_admin": true,
+        "is_default": true,
+        "can_view_menu_documents": true,
+        "can_view_menu_employees": true,
+        "can_view_menu_logging": true,
+        "can_delegate": true,
+        "doc_create_own": true,
+        "doc_create_others": true,
+        "doc_view_own": true,
+        "doc_view_others": true,
+        "doc_decision_own": true,
+        "doc_decision_others": true,
+        "doc_sign_own": true,
+        "doc_sign_others": true,
+        "doc_approve_as_boss": true,
+        "doc_notif_own": true,
+        "doc_notif_others": true,
+        "cert_issue_view": true,
+        "cert_issue_tasks_view": true,
+        "cert_issue_own": true,
+        "cert_issue_others": true,
+        "employees_view": true,
+        "employees_add": true,
+        "employees_change": true,
+        "employees_delete": true,
+        "users_view": true,
+        "users_add": true,
+        "users_change": true,
+        "users_delete": true
+    }
+}

@@ -1,6 +1,6 @@
 import {fetchCurrentUser, fetchLogin} from "../api/apiLoginPage";
 import {ILoginPage} from "../model/modelLoginPage";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import BaseLabel from "@/shared/ui/baseLabel/BaseLabel.tsx";
 import style from "./LoginPage.module.scss"
 import BaseInput from "@/shared/ui/baseInput/ui/BaseInput.tsx";
@@ -31,18 +31,8 @@ const LoginPage = () => {
 	}
 
 	const sendForm = async () => {
-		
 		try {
 			setIsLoading(true)
-			// Удалить
-			await new Promise((resolve) => {
-				setTimeout(() => {
-					dispatch(setUser({})); // Выполняем действие
-					resolve(); // Завершаем Promise
-				}, 1000);
-			});
-			navigate(RoutePath.about)
-			return
 			const res: boolean | void = await fetchLogin(formData,);
 			if (res) {
 				const user: IProfile = await fetchCurrentUser()
@@ -57,6 +47,7 @@ const LoginPage = () => {
 			setIsLoading(false)
 		}
 	};
+
 	return (
 		<>
 			<div className={style.containerLogin}>

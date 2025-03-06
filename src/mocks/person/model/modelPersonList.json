@@ -1,0 +1,124 @@
+{
+    "count": 3,
+    "next": null,
+    "previous": null,
+    "results": [
+        {
+            "id": "15b14352-b295-4752-ae5f-9d7f9c122d54",
+            "object_type": 1,
+            "stext": "Дудкин Андрей Андреевич",
+            "short": "Дудкин А.А.",
+            "position": {
+                "id": "710cf920-26d8-4cfc-8f1c-b8aa5c9af627",
+                "object_type": 2,
+                "stext": "ШД Дудкина в линейной Молга"
+            },
+            "orgunit": {
+                "id": "f30c79b8-c2ee-4052-bcf9-6df67733f296",
+                "object_type": 3,
+                "stext": "Подразделение Дудкина и Корнеева"
+            },
+            "legal_entity": {
+                "identifier": "MOLGA",
+                "stext": "Молга консалтинг"
+            },
+            "photo": "http://localhost:8000/content/placeholder.jpg",
+            "user": {
+                "username": "kedo_dudkin",
+                "email": "",
+                "is_active": true,
+                "is_staff": false,
+                "language_code": null
+            },
+            "phone": "79260465587",
+            "email": "freeholod@mail.ru",
+            "require_usig": null,
+            "certificates": [
+                {
+                    "id": "bb35d86f-6fd0-4afa-a5f4-9efa443a565a",
+                    "person_id": "15b14352-b295-4752-ae5f-9d7f9c122d54",
+                    "serial_number": {
+                        "decimal": "1341807714172112492364252258104155153949",
+                        "hexadecimal": "3F176C4008CB1E29347F386B16F91A61D"
+                    },
+                    "certificate_type": {
+                        "value": "USIG",
+                        "label": "УНЭП"
+                    },
+                    "sign_provider": {
+                        "value": "ASTRAL",
+                        "label": "Калуга Астрал"
+                    },
+                    "file_exists": true,
+                    "issue_date": "2024-06-11T11:45:18Z",
+                    "valid_until": "2025-06-11T11:45:01Z",
+                    "is_active": true
+                }
+            ],
+            "issue_status": {
+                "value": "ISSUED",
+                "label": "Выпущен"
+            }
+        },
+        {
+            "id": "7b8dde2c-08d9-4ac2-b1c9-530580965cc7",
+            "object_type": 1,
+            "stext": "Ряднова Екатерина Валерьевна",
+            "short": "Ряднова Е.В.",
+            "position": {
+                "id": "ffd4b895-b6ad-4ad2-b2a5-e113c06c15e8",
+                "object_type": 2,
+                "stext": "ШД рядновой в линейной структуре"
+            },
+            "orgunit": {
+                "id": "f30c79b8-c2ee-4052-bcf9-6df67733f296",
+                "object_type": 3,
+                "stext": "Подразделение Дудкина и Корнеева"
+            },
+            "legal_entity": {
+                "identifier": "MOLGA",
+                "stext": "Молга консалтинг"
+            },
+            "photo": "http://localhost:8000/content/placeholder.jpg",
+            "user": null,
+            "phone": "79652273319",
+            "email": "freeholod@mal.ru",
+            "require_usig": null,
+            "certificates": [],
+            "issue_status": {
+                "value": "NONE",
+                "label": "Нет"
+            }
+        },
+        {
+            "id": "65536a36-5b8c-45b0-b97d-36ea04d55317",
+            "object_type": 1,
+            "stext": "Корнеев Денис Сергеевич",
+            "short": "Корнеев Д.С.",
+            "position": {
+                "id": "c5990485-9185-4cd7-b8df-78f48861f52a",
+                "object_type": 2,
+                "stext": "ШД Корнеева в линейной Молга"
+            },
+            "orgunit": {
+                "id": "f30c79b8-c2ee-4052-bcf9-6df67733f296",
+                "object_type": 3,
+                "stext": "Подразделение Дудкина и Корнеева"
+            },
+            "legal_entity": {
+                "identifier": "MOLGA",
+                "stext": "Молга консалтинг"
+            },
+            "photo": "http://localhost:8000/content/placeholder.jpg",
+            "user": null,
+            "phone": null,
+            "email": null,
+            "require_usig": null,
+            "certificates": [],
+            "issue_status": {
+                "value": "NONE",
+                "label": "Нет"
+            }
+        }
+    ]
+}

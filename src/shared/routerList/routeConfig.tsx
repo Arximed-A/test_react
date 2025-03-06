@@ -4,6 +4,7 @@ import AboutPage from "@/page/aboutPage/ui/AboutPage.tsx";
 import {StaffPage} from "@/page/staffPage/index.ts";//чанк
 import LoginPage from "@/page/loginPage/ui/LoginPage.tsx";
 import LogoutPage from "@/page/logoutPage/ui/LogoutPage.tsx";
+import PersonPage from "@/page/personPage/ui/PersonPage.tsx";
 import NotFoundPage from "@/page/notFoundPage/ui/NotFoundPage.tsx";
 
 export enum AppRoutes {
@@ -12,6 +13,7 @@ export enum AppRoutes {
   STAFF = "staff",
   LOGIN = "login",
   LOGOUT = "logout",
+	PERSON = "person",
 	NOT_FOUND= "notFound"
 }
 
@@ -24,6 +26,7 @@ export const RoutePath: Record<AppRoutes, string> = {
 	[AppRoutes.STAFF]: "/staff",
 	[AppRoutes.LOGIN]: "/login",
 	[AppRoutes.LOGOUT]: "/logout",
+	[AppRoutes.PERSON]: "/person",
 	[AppRoutes.NOT_FOUND]: "*",
 	
 };
@@ -32,7 +35,7 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
 	[AppRoutes.MAIN]: {
 		path: RoutePath.main,
 		element: <MainPage/>,
-		authOnly: false,
+		authOnly: true,
 	},
 	[AppRoutes.ABOUT]: {
 		path: RoutePath.about,
@@ -51,6 +54,11 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
 	[AppRoutes.LOGOUT]: {
 		path: RoutePath.logout,
 		element: <LogoutPage/>,
+		authOnly: true,
+	},
+	[AppRoutes.PERSON]: {
+		path: RoutePath.person + "/:id",
+		element: <PersonPage/>,
 		authOnly: true,
 	},
 	[AppRoutes.NOT_FOUND]: {

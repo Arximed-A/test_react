@@ -7,7 +7,7 @@ export async function fetchLogin(
 	data: ILoginPage
 ): Promise<boolean | void> {
 	try {
-		await axios.postForm(`${API}/auth`, {
+		 await axios.postForm(`${API}/auth`, {
 			username: data.username,
 			password: data.password,
 		});
